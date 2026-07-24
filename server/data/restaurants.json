@@ -1,0 +1,28 @@
+{
+  "_comment": "Singapore food outlets for the Discover / local-food feature: hawker centres, kopitiams, food courts (Koufu, Food Republic, Kopitiam) and local eateries, on Singapore delivery platforms. Prices in SGD. 'dish' matches a food name/alias in nutrition-db.json. Platforms: GrabFood and foodpanda (Deliveroo has ceased operations in Singapore). In production, replace with real GrabFood / foodpanda APIs.",
+  "restaurants": [
+    { "name": "Tian Tian Hainanese Chicken Rice", "venue": "Maxwell Food Centre", "type": "hawker centre", "dish": "hainanese chicken rice", "price": 5.5,  "rating": 4.6, "distanceKm": 0.8, "platform": "GrabFood",  "eta": "25 min" },
+    { "name": "Selera Rasa Nasi Lemak",           "venue": "Adam Road Food Centre", "type": "hawker centre", "dish": "nasi lemak", "price": 5.0, "rating": 4.5, "distanceKm": 2.1, "platform": "foodpanda", "eta": "30 min" },
+    { "name": "Hill Street Fried Kway Teow",      "venue": "Bedok South Market", "type": "hawker centre", "dish": "char kway teow", "price": 5.0, "rating": 4.5, "distanceKm": 3.2, "platform": "GrabFood", "eta": "35 min" },
+    { "name": "Nam Sing Hokkien Fried Mee",       "venue": "Old Airport Road Food Centre", "type": "hawker centre", "dish": "hokkien mee", "price": 6.0, "rating": 4.4, "distanceKm": 1.9, "platform": "foodpanda", "eta": "30 min" },
+    { "name": "328 Katong Laksa",                 "venue": "East Coast Road", "type": "local eatery", "dish": "laksa", "price": 6.5, "rating": 4.4, "distanceKm": 2.7, "platform": "GrabFood", "eta": "32 min" },
+    { "name": "Tai Wah Pork Noodle",              "venue": "Hong Lim Food Centre", "type": "hawker centre", "dish": "bak chor mee", "price": 6.0, "rating": 4.7, "distanceKm": 1.1, "platform": "GrabFood", "eta": "22 min" },
+    { "name": "Ah Hua Fishball Noodles",          "venue": "Koufu @ Jurong Point", "type": "food court", "dish": "fishball noodle soup", "price": 4.8, "rating": 4.3, "distanceKm": 0.7, "platform": "GrabFood", "eta": "20 min" },
+    { "name": "Kok Kee Wanton Noodle",            "venue": "Lavender Food Square", "type": "hawker centre", "dish": "wanton mee", "price": 5.0, "rating": 4.4, "distanceKm": 2.4, "platform": "foodpanda", "eta": "28 min" },
+    { "name": "Mr Prata",                         "venue": "Koufu @ Nex", "type": "food court", "dish": "mee goreng", "price": 5.5, "rating": 4.2, "distanceKm": 1.3, "platform": "GrabFood", "eta": "24 min" },
+    { "name": "Xin Mei Xiang Economic Rice",      "venue": "Food Republic @ VivoCity", "type": "food court", "dish": "cai fan", "price": 5.2, "rating": 4.1, "distanceKm": 1.0, "platform": "GrabFood", "eta": "20 min" },
+    { "name": "Goldhill Yong Tau Foo",            "venue": "Kopitiam @ Tampines Hub", "type": "food court", "dish": "yong tau foo", "price": 6.0, "rating": 4.5, "distanceKm": 0.9, "platform": "foodpanda", "eta": "22 min" },
+    { "name": "Thunder Tea Rice Hakka",           "venue": "Amoy Street Food Centre", "type": "hawker centre", "dish": "thunder tea rice", "price": 6.5, "rating": 4.6, "distanceKm": 1.2, "platform": "foodpanda", "eta": "26 min" },
+    { "name": "Han Kee Fish Soup",                "venue": "Amoy Street Food Centre", "type": "hawker centre", "dish": "sliced fish soup", "price": 7.0, "rating": 4.7, "distanceKm": 1.2, "platform": "GrabFood", "eta": "25 min" },
+    { "name": "Song Fa Bak Kut Teh",              "venue": "New Bridge Road", "type": "local eatery", "dish": "bak kut teh", "price": 9.5, "rating": 4.6, "distanceKm": 1.5, "platform": "GrabFood", "eta": "30 min" },
+    { "name": "Fatty Cheong Char Siew Rice",      "venue": "ABC Brickworks Food Centre", "type": "hawker centre", "dish": "char siew rice", "price": 6.0, "rating": 4.5, "distanceKm": 2.0, "platform": "foodpanda", "eta": "28 min" },
+    { "name": "Kampong Chicken Eating House",     "venue": "Smith Street", "type": "local eatery", "dish": "roasted duck rice", "price": 6.5, "rating": 4.3, "distanceKm": 1.4, "platform": "GrabFood", "eta": "27 min" },
+    { "name": "Chomp Chomp Satay",                "venue": "Chomp Chomp Food Centre", "type": "hawker centre", "dish": "chicken satay", "price": 8.0, "rating": 4.5, "distanceKm": 3.5, "platform": "foodpanda", "eta": "35 min" },
+    { "name": "He Zhong Carrot Cake",             "venue": "Bukit Timah Food Centre", "type": "hawker centre", "dish": "chai tow kway", "price": 4.0, "rating": 4.4, "distanceKm": 2.8, "platform": "GrabFood", "eta": "30 min" },
+    { "name": "Kwong Cheng Popiah",               "venue": "Tiong Bahru Market", "type": "hawker centre", "dish": "popiah", "price": 3.5, "rating": 4.3, "distanceKm": 1.6, "platform": "foodpanda", "eta": "26 min" },
+    { "name": "SaladStop!",                       "venue": "Raffles City", "type": "restaurant", "dish": "grilled chicken breast", "price": 12.9, "rating": 4.4, "distanceKm": 1.1, "platform": "foodpanda", "eta": "28 min" },
+    { "name": "The Salmon Store",                 "venue": "Food Republic @ Wisma Atria", "type": "food court", "dish": "salmon don", "price": 11.5, "rating": 4.5, "distanceKm": 1.0, "platform": "GrabFood", "eta": "24 min" },
+    { "name": "Ya Kun Kaya Toast",                "venue": "Far East Square", "type": "kopitiam", "dish": "kaya toast set", "price": 5.8, "rating": 4.5, "distanceKm": 0.9, "platform": "GrabFood", "eta": "20 min" },
+    { "name": "Rochor Beancurd House",            "venue": "Short Street", "type": "local eatery", "dish": "tau huay", "price": 2.5, "rating": 4.4, "distanceKm": 1.7, "platform": "foodpanda", "eta": "25 min" }
+  ]
+}
