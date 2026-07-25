@@ -1,0 +1,25 @@
+{
+  "name": "hereforfood",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agentic AI nutrition & dieting assistant. Built on the ChatGPT brainstorm blueprint, powered by Microsoft (Azure) AI Foundry Agent Service.",
+  "type": "commonjs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@azure/ai-agents": "^1.0.0",
+    "@azure/identity": "^4.5.0",
+    "@supabase/supabase-js": "^2.110.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@expo/ngrok": "^4.1.3"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "_comment": "Singapore home-cook recipes for the Meal Plan page. Keyed by a food name in nutrition-db.json. estimatedCost in SGD. In production an AI language model or recipe API would generate these; nutrition still comes from the database, not invented.",
+  "recipes": [
+    {
+      "forDish": "soft-boiled eggs",
+      "title": "Kopitiam Soft-Boiled Eggs",
+      "servings": 1,
+      "estimatedCost": 2,
+      "timeMinutes": 8,
+      "ingredients": ["2 eggs", "Dark soy sauce", "White pepper"],
+      "steps": [
+        "Bring water to a boil, then switch off the heat.",
+        "Lower in the eggs and cover for 6 minutes.",
+        "Crack into a bowl; season with dark soy and white pepper."
+      ]
+    },
+    {
+      "forDish": "economic bee hoon",
+      "title": "Simple Fried Bee Hoon",
+      "servings": 1,
+      "estimatedCost": 3,
+      "timeMinutes": 15,
+      "ingredients": ["1 portion rice vermicelli (bee hoon)", "Beansprouts", "Cabbage, shredded", "1 egg", "Light soy sauce", "1 tsp oil"],
+      "steps": [
+        "Soak the bee hoon in warm water until pliable, then drain.",
+        "Stir-fry cabbage and beansprouts in a little oil.",
+        "Push aside, scramble the egg, then add the bee hoon and soy sauce.",
+        "Toss until evenly coated and heated through."
+      ]
+    },
+    {
+      "forDish": "roti prata",
+      "title": "Roti Prata with Dhal Curry",
+      "servings": 1,
+      "estimatedCost": 3,
+      "timeMinutes": 15,
+      "ingredients": ["2 frozen plain prata", "1 cup dhal (lentil) curry", "Oil for pan"],
+      "steps": [
+        "Warm the dhal curry in a small pot.",
+        "Pan-fry the prata over medium heat until golden and crisp on both sides.",
+        "Serve hot with the curry for dipping."
+      ]
+    },
+    {
+      "forDish": "fishball noodle soup",
+      "title": "Fishball Noodle Soup",
+      "servings": 1,
+      "estimatedCost": 4,
+      "timeMinutes": 15,
+      "ingredients": ["1 portion noodles (mee pok or bee hoon)", "6 fishballs", "Leafy vegetables", "500ml anchovy stock", "Fried shallots", "Spring onion"],
+      "steps": [
+        "Bring the stock to a boil and poach the fishballs until they float.",
+        "Blanch the noodles and vegetables separately.",
+        "Assemble in a bowl and pour over the hot soup.",
+        "Top with fried shallots and spring onion."
+      ]
+    },
+    {
+      "forDish": "chap chye",
+      "title": "Stir-fried Chap Chye (Mixed Vegetables)",
+      "servings": 1,
+      "estimatedCost": 3,
+      "timeMinutes": 15,
+      "ingredients": ["Cabbage", "Carrot", "Black fungus", "Tang hoon (glass noodles)", "Garlic", "Light soy sauce", "1 tsp oil"],
+      "steps": [
+        "Soak the tang hoon and black fungus until soft.",
+        "Fry garlic, then add the harder vegetables first.",
+        "Add cabbage, fungus and tang hoon with a splash of water and soy.",
+        "Simmer until everything is tender."
+      ]
+    },
+    {
+      "forDish": "char siew rice",
+      "title": "Char Siew Rice (leaner cut)",
+      "servings": 1,
+      "estimatedCost": 5,
+      "timeMinutes": 20,
+      "ingredients": ["150g char siew (lean pork shoulder)", "1 bowl rice", "Blanched leafy greens", "Dark soy sauce", "Cucumber slices"],
+      "steps": [
+        "Slice the char siew thinly.",
+        "Plate over warm rice with blanched greens and cucumber.",
+        "Drizzle with a little dark soy sauce."
+      ]
+    },
+    {
+      "forDish": "yong tau foo",
+      "title": "Homemade Yong Tau Foo Soup",
+      "servings": 1,
+      "estimatedCost": 5,
+      "timeMinutes": 20,
+      "ingredients": ["6 assorted YTF pieces (tofu, fishball, stuffed chilli, ladies' finger)", "1 handful leafy vegetables", "1 bowl bee hoon or kway teow (optional)", "500ml ikan bilis / soya bean stock", "Spring onion", "Fried shallots"],
+      "steps": [
+        "Bring the stock to a gentle boil.",
+        "Blanch the YTF pieces until they float, about 4-5 minutes.",
+        "Add the leafy vegetables (and noodles) for the last minute.",
+        "Ladle into a bowl and top with spring onion and fried shallots.",
+        "Serve with chilli and sweet sauce on the side."
+      ]
+    },
+    {
+      "forDish": "thunder tea rice",
+      "title": "Hakka Lei Cha (Thunder Tea Rice)",
+      "servings": 1,
+      "estimatedCost": 5,
+      "timeMinutes": 25,
+      "ingredients": ["1 bowl brown rice", "Diced long beans, chye sim and cabbage", "Diced firm tofu", "Preserved radish (chai poh)", "Roasted peanuts (omit for allergy)", "Thunder tea paste: basil, mint, coriander, green tea"],
+      "steps": [
+        "Blend the herbs and green tea with hot water to make the tea broth.",
+        "Stir-fry each diced vegetable and the tofu separately until just cooked.",
+        "Arrange the vegetables over brown rice.",
+        "Serve with the warm herbal tea to pour over, or on the side."
+      ]
+    },
+    {
+      "forDish": "hainanese chicken rice",
+      "title": "Hainanese Chicken Rice (lighter, poached)",
+      "servings": 1,
+      "estimatedCost": 6,
+      "timeMinutes": 40,
+      "ingredients": ["1 chicken leg (skin removed for fewer calories)", "1 bowl rice", "2 cloves garlic", "Thumb of ginger", "Pandan leaf", "Cucumber slices", "Chilli sauce"],
+      "steps": [
+        "Poach the chicken in gently simmering water with ginger for 25-30 minutes; rest, then slice.",
+        "Fry garlic and ginger, add rice and a little chicken stock, cook until fluffy.",
+        "Plate rice with sliced chicken and cucumber.",
+        "Serve with chilli and dark soy."
+      ]
+    },
+    {
+      "forDish": "sliced fish soup",
+      "title": "Clear Sliced Fish Soup",
+      "servings": 1,
+      "estimatedCost": 6,
+      "timeMinutes": 20,
+      "ingredients": ["150g sliced batang or dory fish", "Napa cabbage and tomato", "Slices of ginger", "500ml anchovy stock", "Goji berries (optional)", "Spring onion", "Rice or bee hoon on the side"],
+      "steps": [
+        "Simmer the stock with ginger and tomato for 5 minutes.",
+        "Add cabbage and cook until soft.",
+        "Slide in the fish slices and poach 2-3 minutes until just opaque.",
+        "Finish with spring onion; serve with rice or bee hoon."
+      ]
+    },
+    {
+      "forDish": "nasi lemak",
+      "title": "Nasi Lemak with Grilled Chicken",
+      "servings": 1,
+      "estimatedCost": 6,
+      "timeMinutes": 35,
+      "ingredients": ["1 bowl rice cooked with a splash of coconut milk and pandan", "1 grilled chicken thigh", "1 egg", "Sliced cucumber", "Roasted ikan bilis and peanuts (omit for allergy)", "Sambal chilli"],
+      "steps": [
+        "Cook the rice with pandan and a little coconut milk.",
+        "Grill (instead of deep-fry) the chicken to cut oil.",
+        "Fry or boil the egg.",
+        "Plate rice with chicken, egg, cucumber, ikan bilis and a spoon of sambal."
+      ]
+    },
+    {
+      "forDish": "cai fan",
+      "title": "Balanced Cai Fan (economic rice) plate",
+      "servings": 1,
+      "estimatedCost": 5,
+      "timeMinutes": 30,
+      "ingredients": ["1 bowl rice (half brown for more fibre)", "1 palm-sized steamed or grilled protein (fish/chicken/tofu)", "2 portions vegetables (chap chye, stir-fried greens)", "Light soy and sesame oil"],
+      "steps": [
+        "Steam or grill your protein instead of choosing fried dishes.",
+        "Stir-fry two vegetable sides with minimal oil.",
+        "Serve over rice; keep the gravy light.",
+        "This 1-protein-2-veg plate mirrors a healthier cai fan choice."
+      ]
+    },
+    {
+      "forDish": "chai tow kway",
+      "title": "White Carrot Cake (less oil)",
+      "servings": 1,
+      "estimatedCost": 4,
+      "timeMinutes": 20,
+      "ingredients": ["Steamed radish cake, cubed", "1 egg", "Preserved radish (chai poh)", "Garlic", "Spring onion", "1 tsp oil (light)"],
+      "steps": [
+        "Pan-fry garlic and chai poh in a little oil.",
+        "Add the radish cake cubes and let them char slightly.",
+        "Push aside, scramble in the egg, then combine.",
+        "Top with spring onion. Skip the sweet sauce to keep it 'white'."
+      ]
+    },
+    {
+      "forDish": "kaya toast set",
+      "title": "Kopitiam Kaya Toast Set",
+      "servings": 1,
+      "estimatedCost": 4,
+      "timeMinutes": 10,
+      "ingredients": ["2 slices toast", "Kaya jam", "Thin slice of butter", "2 soft-boiled eggs", "Dark soy sauce and white pepper", "Kopi or teh"],
+      "steps": [
+        "Toast the bread and spread kaya and a little butter.",
+        "Soft-boil the eggs for about 6 minutes.",
+        "Crack the eggs into a bowl, add dark soy and pepper.",
+        "Enjoy the toast dipped into the eggs with kopi or teh."
+      ]
+    }
+  ]
+}

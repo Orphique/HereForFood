@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HereForFood — AI Nutrition Coach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <!-- Hamburger Button (Placed BEFORE Logo) -->
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="brand">🥗 <span>HereForFood</span></div>
+
+    <!-- 5-page navigation -->
+    <nav id="nav" class="nav hidden">
+      <button class="nav-btn" data-page="dashboard">Dashboard</button>
+      <button class="nav-btn" data-page="log">Log Food</button>
+      <button class="nav-btn" data-page="plan">Meal Plan</button>
+      <button class="nav-btn" data-page="discover">Discover</button>
+      <button class="nav-btn" data-page="settings">Settings</button>
+    </nav>
+
+    <div id="userChip" class="user-chip hidden"></div>
+  </header>
+
+
+
+    <!-- ================= LOGIN (Feature 1) ================= -->
+    <section id="loginView" class="card center">
+      <h1>Welcome 👋</h1>
+      <p class="muted">Your AI nutrition companion — it doesn't just tell you what you ate, it helps you decide what to eat next.</p>
+      <input id="loginEmail" type="email" placeholder="you@example.com" />
+      <button id="loginBtn" class="primary">Continue with Email</button>
+      <button id="googleBtn" class="ghost">Continue with Google (demo)</button>
+      <p class="tiny muted">Demo login — no password. Your email is your profile id.</p>
+    </section>
+
+    <!-- ================= ONBOARDING (Feature 7) ================= -->
+    <section id="onboardView" class="card hidden">
+      <h2>What's your goal?</h2>
+      <p class="muted">This shapes how the whole app coaches you.</p>
+      <div id="goalGrid" class="goal-grid"></div>
+      <div class="grid2">
+        <label>Name<input id="obName" placeholder="e.g. Alex" /></label>
+        <label>Age<input id="obAge" type="number" placeholder="e.g. 21" /></label>
+      </div>
+      <div class="grid2">
+        <label>Gender<select id="obGender"></select></label>
+        <label>Activity level<select id="obActivity"></select></label>
+      </div>
+      <div class="grid2">
+        <label>Weight (kg)<input id="obWeight" type="number" placeholder="e.g. 65" /></label>
+        <label>Height (cm)<input id="obHeight" type="number" placeholder="e.g. 170" /></label>
+      </div>
+      <p class="tiny muted" id="obCalcHint">We’ll calculate your daily calorie target from these. You can override it below.</p>
+      <div class="grid2">
+        <label>Daily calorie goal (optional)<input id="calorieGoal" type="number" placeholder="auto-calculated" /></label>
+        <label>Budget per meal (SGD)<input id="budget" type="number" placeholder="e.g. 8" /></label>
+      </div>
+      <label>Allergies (comma separated)<input id="allergies" placeholder="e.g. peanuts, shellfish" /></label>
+      <label>Dietary restrictions (comma separated)<input id="restrictions" placeholder="e.g. vegetarian, halal" /></label>
+      <label>Any medical condition (optional)<input id="obCondition" placeholder="e.g. diabetes, high blood pressure" /></label>
+      <label>Preferences / foods you like (comma separated)<input id="preferences" placeholder="e.g. chicken rice, yong tau foo, laksa" /></label>
+      <button id="saveOnboardBtn" class="primary">Save & Start</button>
+    </section>
+
+    <!-- ================= APP PAGES ================= -->
+    <div id="appView" class="hidden">
+
+      <!-- ---------- PAGE: DASHBOARD ---------- -->
+      <section id="page-dashboard" class="page">
+        <div class="card">
+          <div class="dash-head">
+            <div>
+              <h2 id="greeting">Hello!</h2>
+              <span id="goalBadge" class="badge"></span>
+            </div>
+            <button class="primary" onclick="goto('log')">+ Log Food</button>
+          </div>
+
+          <!-- Remaining calories as the central concept (tab 2, section 7) -->
+          <div class="remaining">
+            <div class="remaining-num"><strong id="remCal">–</strong><span class="tiny muted">kcal remaining today</span></div>
+            <div class="remaining-actions">
+              <p class="tiny muted">What would you like?</p>
+              <div class="action-row">
+                <button onclick="goto('plan')">🍳 Cook at home</button>
+                <button onclick="goto('discover')">🍜 Order food</button>
+                <button onclick="goto('discover')">🥗 Healthy meal</button>
+                <button onclick="openChat()">🤖 Ask AI</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Macro progress bars (tab 2, section 2) -->
+          <div id="bars" class="bars"></div>
+
+          <!-- Today's meals grouped by type (tab 2, section 2) -->
+          <h3 class="section-title">Today's Meals</h3>
+          <div id="mealsByType" class="meals-by-type"></div>
+        </div>
+      </section>
+
+      <!-- ---------- PAGE: LOG FOOD ---------- -->
+      <section id="page-log" class="page hidden">
+        <div class="card">
+          <h2>Log Food</h2>
+          <p class="muted">Log by photo, text, or voice. We give an AI-powered <em>estimate</em> you can fine-tune.</p>
+          <div class="input-tabs">
+            <button class="itab active" data-input="text">⌨️ Text</button>
+            <button class="itab" data-input="photo">📷 Photo</button>
+            <button class="itab" data-input="voice">🎤 Voice</button>
+          </div>
+          <div class="log-input-row">
+            <input id="logInput" placeholder='e.g. "chicken rice with a kopi and kaya toast"' />
+            <button id="estimateBtn" class="primary">Estimate</button>
+          </div>
+          <input id="logImgInput" type="file" accept="image/*" class="hidden" />
+
+          <!-- Estimate result + adjustable portions (tab 2, section 4) -->
+          <div id="estimateResult" class="hidden">
+            <div class="est-head">
+              <h3 class="section-title">AI detected</h3>
+              <span class="tiny muted">Adjust portions for accuracy</span>
+            </div>
+            <div id="estItems" class="est-items"></div>
+            <div class="est-total">Estimated total: <strong id="estTotal">0 kcal</strong></div>
+            <div class="log-commit">
+              <label>Meal
+                <select id="mealType">
+                  <option value="breakfast">🍳 Breakfast</option>
+                  <option value="lunch">🍜 Lunch</option>
+                  <option value="dinner">🍗 Dinner</option>
+                  <option value="snack">🍎 Snack</option>
+                </select>
+              </label>
+              <button id="logCommitBtn" class="primary">Log this meal</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- PAGE: MEAL PLAN ---------- -->
+      <section id="page-plan" class="page hidden">
+        <div class="card">
+          <div class="dash-head">
+            <h2>Meal Plan</h2>
+            <div class="input-tabs small">
+              <button class="ptab active" data-period="day">Day</button>
+              <button class="ptab" data-period="week">Week</button>
+            </div>
+          </div>
+          <p class="muted">Personalised to your goal, calories, restrictions and preferences.</p>
+          <button id="groceryBtn" class="ghost" style="margin-bottom:12px">🛒 Grocery list for this plan</button>
+          <div id="planBody">Loading…</div>
+        </div>
+      </section>
+
+      <!-- ---------- PAGE: DISCOVER ---------- -->
+      <section id="page-discover" class="page hidden">
+        <div class="card">
+          <h2>Discover</h2>
+          <p class="muted" id="discoverSub">Meals you can actually order that fit your goals.</p>
+          <div id="discoverBody">Loading…</div>
+        </div>
+      </section>
+
+      <!-- ---------- PAGE: SETTINGS ---------- -->
+      <section id="page-settings" class="page hidden">
+        <div class="card">
+          <h2>Settings</h2>
+          <p class="muted">Your profile drives every recommendation.</p>
+          <div class="grid2">
+            <label>Name<input id="setName" /></label>
+            <label>Age<input id="setAge" type="number" /></label>
+          </div>
+          <div class="grid2">
+            <label>Gender<select id="setGender"></select></label>
+            <label>Activity level<select id="setActivity"></select></label>
+          </div>
+          <div class="grid2">
+            <label>Weight (kg)<input id="setWeight" type="number" /></label>
+            <label>Height (cm)<input id="setHeight" type="number" /></label>
+          </div>
+          <label>Goal
+            <select id="setGoal"></select>
+          </label>
+          <div class="grid2">
+            <label>Daily calorie goal<input id="setCalorie" type="number" /></label>
+            <label>Budget per meal (SGD)<input id="setBudget" type="number" /></label>
+          </div>
+          <p class="tiny muted" id="setBmi"></p>
+          <label>Allergies (comma separated)<input id="setAllergies" /></label>
+          <label>Dietary restrictions (comma separated)<input id="setRestrictions" /></label>
+          <label>Medical condition (optional)<input id="setCondition" /></label>
+          <label>Preferences (comma separated)<input id="setPreferences" /></label>
+          <button id="saveSettingsBtn" class="primary">Save changes</button>
+          <span id="settingsSaved" class="tiny saved hidden">✓ Saved</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ================= ASK AI (agent chat drawer) ================= -->
+  <button id="chatFab" class="chat-fab hidden" title="Ask AI">🤖</button>
+  <div id="chatDrawer" class="chat-drawer hidden">
+    <div class="chat-head">
+      <h3>🤖 Coach <span id="providerTag" class="tiny muted"></span></h3>
+      <button id="chatClose" class="icon">✕</button>
+    </div>
+    <div id="chatLog" class="chat-log"></div>
+    <div id="chatPhotoPreview" class="chat-photo hidden">
+      <img id="chatPhotoImg" alt="attached food photo" />
+      <button id="chatPhotoClear" class="icon" title="Remove photo">✕</button>
+      <span class="tiny muted">Photo attached — send to identify &amp; log it.</span>
+    </div>
+    <div class="composer">
+      <button id="chatPhotoBtn" class="icon" title="Log food by photo">📷</button>
+      <input id="chatPhotoInput" type="file" accept="image/*" class="hidden" />
+      <input id="chatInput" placeholder="Ask me anything about your food…" />
+      <button id="sendBtn" class="primary">Send</button>
+    </div>
+  </div>
+
+  <!-- Recipe modal -->
+  <div id="recipeModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="recipeClose" class="icon modal-x">✕</button>
+      <div id="recipeBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
